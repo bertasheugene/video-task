@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.video{
+    color: #fff;
+
+}
+.button{
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.title{
+    font-family: 'TiemposFine-Bold', serif;
+    font-size: 50px;
+    line-height: 60px;
+}
+.video-front{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.video-front__background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.video-front__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.video-front__content{
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+
+.video-front__title_italic{
+    font-family: 'Quentin', sans-serif;
+    font-size: 70px;
+    padding: 0px 10px;
+}
+.video-front__text{
+    position: relative;
+    padding: 50px 0px;
+    margin-bottom: 20px;
+}
+.video-front__text::before{
+    content: '';
+    width: 100px;
+    height: 9px;
+    background-color: #FFDF37;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 50px);
+}
+.video-front__title{
+    margin: 0;
+}
+
+.video-popup{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.video-popup__wrapper{
+    position: relative;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+    transition: all 0.3s ease;
+}
+.video-popup__content{
+    width: 90%;
+    height: inherit;
+    margin: 0 auto;
+    background: #fff;
+    position: relative;
+}
+.video-popup__close{
+    position: absolute;
+    right: 0;
+    top: -25px;
+    background: url(../../assets/images/close.svg) no-repeat center / contain;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.video-popup__iframe{
+    height: inherit;
+}
+.video-front__button:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px){
+
+    .title{
+        font-size: 40px;
+        line-height: 46px;
+    }
+    .video-front__title_italic {
+        font-size: 52px;
+    }
+    .video-front__text{
+        margin-bottom: 0px;
+        padding: 40px 0px;
+    }
+    .video-front__text::before {
+        height: 6px;
+    }
+}
+
+@media (max-width: 768px){
+    .video-front__content{
+        width: 90%;
+    }
+    .video-front__text{
+        max-width: 410px;
+        margin: 0 auto;
+    }
+    .title {
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .video-front__title{
+        display: inline;
+    }
+    .video-front__title_italic{
+        font-size: 32px;
+        padding: 0px 5px;
+    }
+    
+}
